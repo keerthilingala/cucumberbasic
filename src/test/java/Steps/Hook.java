@@ -17,13 +17,14 @@ public class Hook extends BaseUtil{
         this.base = base;
     }
 
-    @Before
+      @Before
     public void InitializeTest() {
 
-        System.out.println("Opening the browser : MOCK");
+        System.out.println("Opening the browser : Firefox");
 
         //Passing a dummy WebDriver instance step info
-        base.StepInfo = "FirefoxDriver";
+        System.setProperty("webdriver.chrome.driver","C:\\liba\\chromedriver_win32");
+        base.StepInfo = new ChromeDriver();
     }
 
 
